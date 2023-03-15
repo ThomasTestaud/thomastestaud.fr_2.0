@@ -1,18 +1,57 @@
+body {
+    background-color: #111111;
+}
+.bg{
+    opacity: .6;
+}
+
+nav a {
+    color: white;
+}
+
 .article-project {
-    background-color: green;
     height: 100vh;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
+    color: white;
 }
 
+h2 {
+    font-family: 'Climate Crisis', cursive;
+    font-size: 4rem;
+    opacity: .7;
+}
+
+p {
+    font-size: 1.5rem;
+    opacity: .5;
+    font-weight: lighter;
+    font-style: italic;
+}
+
+
+ul {
+    /*margin-top: 5rem;*/
+    columns: 2;
+    -webkit-columns: 2;
+    -moz-columns: 2;
+    
+}
+
+li {
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 1.5rem;
+    opacity: .7;
+}
 
 iframe {
     margin-left: 30%;
     height: 600px;
     width: 350px;
     frameborder: 0;
+    border-radius: 1rem;
 }
 
 .scroll-down,
@@ -51,9 +90,15 @@ iframe {
     grid-template-rows: repeat(3, 1fr);
     grid-column-gap: 0px;
     grid-row-gap: 0px;
-    }
-    
-    .project-el-1 { grid-area: 1 / 1 / 2 / 2; }
-    .project-el-2 { grid-area: 2 / 1 / 3 / 2; }
-    .project-el-3 { grid-area: 3 / 1 / 4 / 2; }
-    .project-el-4 { grid-area: 1 / 2 / 4 / 3; }
+}
+
+.project-el-1 { 
+    grid-area: 1 / 1 / 4 / 2;
+    position: relative;
+    top: -2rem;
+}
+
+.project-el-4 { 
+    grid-area: 1 / 2 / 4 / 3; 
+}
+

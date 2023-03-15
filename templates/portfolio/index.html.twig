@@ -9,6 +9,10 @@
 	<link rel="stylesheet" href="{{ asset('style/portfolio.css') }}">
 {% endblock %}
 
+{% block script %}
+	{{ parent() }}
+{% endblock %}
+
 {% block nav %}
 	<a href="/">
 		Accueil
@@ -19,20 +23,19 @@
 {% endblock %}
 
 {% block body %}
+
+	{% set count = 0 %}
 	{% for article in articles %}
-		<article class='article-project'>
+		{% set count = count + 1 %}
+
+		<article class='article-project' id="project-{{ count }}">
 			<div class="scroll-up">
 				<i class=" fa-solid fa-arrow-up"></i>
 			</div>
-
 			<div class="project">
 				<div class="project-el-1">
 					<h2>{{article.title}}</h2>
-				</div>
-				<div class="project-el-2">
 					<p>{{article.description}}</p>
-				</div>
-				<div class="project-el-3">
 					<ul class="techs">
 						{% for tech in article.techs %}
 							<li>
@@ -49,5 +52,6 @@
 				<i class="fa-solid fa-arrow-down"></i>
 			</div>
 		</article>
+
 	{% endfor %}
 {% endblock %}
