@@ -1,6 +1,13 @@
 body {
     background-color: #111111;
+    transition: background-color 1s;
+    overflow: hidden;
 }
+
+.white {
+    background-color: #98745d;
+}
+
 .bg{
     opacity: .6;
 }
@@ -54,6 +61,16 @@ iframe {
     border-radius: 1rem;
 }
 
+
+.square {
+    height: 500px;
+    width: 500px;
+}
+
+.noscroll {
+    overflow: hidden;
+}
+
 .scroll-down,
 .scroll-up {
     position: absolute;
@@ -94,11 +111,66 @@ iframe {
 
 .project-el-1 { 
     grid-area: 1 / 1 / 4 / 2;
-    position: relative;
     top: -2rem;
+    position: relative;
 }
 
+.project-el-1 div:nth-child(1){
+    position: relative;
+    left: -30%;
+    top: -10rem;
+    rotate: -0.1turn;
+    opacity: 0;
+}
+
+.show .project-el-1 div:nth-child(1){
+    animation: project 1s forwards;
+}
+
+.project-el-1 div:nth-child(2){
+    position: relative;
+    left: 0%;
+    top: 0rem;
+    rotate: 0.05turn;
+    scale: 0.5;
+    opacity: 0;
+}
+
+.show .project-el-1 div:nth-child(2){
+    animation: project 1s 0.2s forwards;
+
+}
+.project-el-1 div:nth-child(3){
+    position: relative;
+    left: -10%;
+    top: 20rem;
+    rotate: 0.1turn;
+    opacity: 0;
+}
+.show .project-el-1 div:nth-child(3){
+    animation: project 1s 0.3s forwards;
+
+}
 .project-el-4 { 
     grid-area: 1 / 2 / 4 / 3; 
+    position: relative;
+    left: 80%;
+    top: -10rem;
+    opacity: 0;
+    rotate: 0.1turn;
+    scale: 0.6;
+}
+.show .project-el-4{
+    
+    animation: project 1s 0.2s forwards;
 }
 
+@keyframes project {
+    to {
+        left: 0%;
+        top: 0rem;
+        opacity: 1;
+        rotate: 0turn;
+        scale: 1;
+    }
+   }

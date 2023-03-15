@@ -11,6 +11,7 @@
 
 {% block script %}
 	{{ parent() }}
+	<script src="{{ asset('js/portfolio.js') }}"></script>
 {% endblock %}
 
 {% block nav %}
@@ -26,32 +27,43 @@
 
 	{% set count = 0 %}
 	{% for article in articles %}
-		{% set count = count + 1 %}
 
 		<article class='article-project' id="project-{{ count }}">
-			<div class="scroll-up">
-				<i class=" fa-solid fa-arrow-up"></i>
-			</div>
+			{% if count != 0 %}
+				<div class="scroll-up scroll-up-{{ count }}">
+					<i class=" fa-solid fa-arrow-up"></i>
+				</div>
+			{% endif %}
 			<div class="project">
 				<div class="project-el-1">
-					<h2>{{article.title}}</h2>
-					<p>{{article.description}}</p>
-					<ul class="techs">
-						{% for tech in article.techs %}
-							<li>
-								{{tech}}
-							</li>
-						{% endfor %}
-					</ul>
+					<div>
+						<h2>{{article.title}}</h2>
+					</div>
+					<div>
+						<p>{{article.description}}</p>
+					</div>
+					<div>
+						<ul class="techs">
+							{% for tech in article.techs %}
+								<li>
+									{{tech}}
+								</li>
+							{% endfor %}
+						</ul>
+					</div>
 				</div>
 				<div class="project-el-4">
-					<iframe src="{{article.link}}" frameborder="0"></iframe>
+					<iframe class="{{article.shape}}" src="{{article.link}}" frameborder="0"></iframe>
 				</div>
 			</div>
-			<div class="scroll-down">
-				<i class="fa-solid fa-arrow-down"></i>
-			</div>
+			{% if count != (length - 1) %}
+				<div class="scroll-down scroll-down-{{ count }}">
+					<i class="fa-solid fa-arrow-down"></i>
+				</div>
+			{% endif %}
+
 		</article>
 
+		{% set count = count + 1 %}
 	{% endfor %}
 {% endblock %}
