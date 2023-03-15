@@ -1,11 +1,12 @@
 .article-project {
-    background-color: #0E4C93;
+    background-color: green;
     height: 100vh;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 
 iframe {
     margin-left: 30%;
