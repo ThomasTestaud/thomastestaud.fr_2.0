@@ -24,7 +24,7 @@ h1 {
     opacity: 0;
     rotate: -0.01turn;
     scale: 0.8;
-    animation: animateh 2s forwards;
+    animation: animateh 1s forwards;
 }
 
 @keyframes animateh {
@@ -58,7 +58,7 @@ p {
     opacity: 0;
     rotate: -0.01turn;
     scale: 0.8;
-    animation: animatep 3s forwards;
+    animation: animatep 2s forwards;
 }
 
 @keyframes animatep {
@@ -81,7 +81,7 @@ img {
     opacity: 0;
     rotate: -0.2turn;
     scale: 0.8;
-    animation: animateim 2.5s forwards;
+    animation: animateim 1.5s forwards;
 }
 
 @keyframes animateim {
@@ -165,7 +165,7 @@ nav a:nth-child(1){
     opacity: 0;
     rotate: 0.1turn;
     scale: 0.8;
-    animation: animatea1 3.5s forwards;
+    animation: animatea1 1.5s forwards;
 }
 
 @keyframes animatea1 {
@@ -186,7 +186,7 @@ nav a:nth-child(2){
     opacity: 0;
     rotate: -0.05turn;
     scale: 0.7;
-    animation: animatea2 3s 0.5s forwards;
+    animation: animatea2 1.5s 0.2s forwards;
 }
 
 @keyframes animatea2 {

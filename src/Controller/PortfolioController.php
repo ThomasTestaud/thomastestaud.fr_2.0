@@ -19,6 +19,15 @@ class PortfolioController extends AbstractController
                 'link' => 'https://thomastestaud.sites.3wa.io/PROJET%20FINAL/2.1/index.php?route=welcome&action=login',
                 'techs' => ['PHP', 'MySQL', 'JavaScript', 'HTML', 'CSS', 'Modèle MVC', 'Ajax'],
                 'shape' => 'phone',
+                'github' => 'https://github.com/ThomasTestaud/Pioupiou/blob/main/Pioupiou/index.php',
+            ],
+            [
+                'title' => 'CarCity',
+                'description' => "CarCity est un mini GTA-like en JavaScript. On y incarne un petit bonhomme bleu que peut se promener à sa guise, enter et conduire des petites voitures HTML/CSS.",
+                'link' => 'https://thomastestaud.sites.3wa.io/CarCity_PIOU.1/car.phtml',
+                'techs' => ['JavaScript', 'HTML', 'CSS'],
+                'shape' => 'square',
+                'github' => 'https://github.com/ThomasTestaud/CarCity/blob/main/CarCity/Car.js',
             ],
             [
                 'title' => 'DNT V.C.',
@@ -26,6 +35,7 @@ class PortfolioController extends AbstractController
                 'link' => 'https://www.thomastestaud.fr/-/DntVisualChecker/index.php',
                 'techs' => ['PHP', 'JavaScript', 'HTML', 'CSS'],
                 'shape' => 'square',
+                'github' => 'https://github.com/ThomasTestaud/DNT_Visual_Checker/blob/main/DNT_Check/Classes/Scanner.php',
             ],
             [
                 'title' => 'MemoList',
@@ -33,13 +43,7 @@ class PortfolioController extends AbstractController
                 'link' => 'https://www.thomastestaud.fr/-/MemoList/index.php',
                 'techs' => ['PHP', 'MySQL', 'HTML', 'CSS'],
                 'shape' => 'phone',
-            ],
-            [
-                'title' => 'CarCity',
-                'description' => "CarCity est un mini GTA-like en JavaScript. On y incarne un petit bonhomme bleu que peut se promener à sa guise, enter et conduire des petites voitures HTML/CSS.",
-                'link' => 'https://www.thomastestaud.fr/-/CarCity/index.html',
-                'techs' => ['JavaScript', 'HTML', 'CSS'],
-                'shape' => 'square',
+                'github' => 'https://github.com/ThomasTestaud/MemoList/blob/main/MemoList/index.php',
             ],
         ];
 

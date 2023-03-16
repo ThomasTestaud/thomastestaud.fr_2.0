@@ -12,6 +12,7 @@ body {
     opacity: .6;
 }
 
+a,
 nav a {
     color: white;
 }
@@ -53,6 +54,7 @@ li {
     opacity: .7;
 }
 
+
 iframe {
     margin-left: 30%;
     height: 600px;
@@ -60,6 +62,10 @@ iframe {
     frameborder: 0;
     border-radius: 1rem;
 }
+
+iframe::-webkit-scrollbar {
+    display: none;
+  }
 
 
 .square {
