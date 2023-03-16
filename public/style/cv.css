@@ -1,0 +1,35 @@
+body {
+    background-color: #ec889a91;
+}
+
+.bg{
+    opacity: 1;
+}
+
+nav a {
+    color: white;
+}
+
+main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+img {
+    margin: 5rem 0rem;;
+    max-width: 900px;
+    animation: animatecv 2s forwards;
+    
+    position: relative;
+    top: 40em;
+    opacity: 0;
+}
+
+
+@keyframes animatecv {
+    to {
+        top: 0em;
+        opacity: 0.9;
+    }
+}

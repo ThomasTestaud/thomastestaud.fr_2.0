@@ -61,6 +61,16 @@ nav a {
     opacity: .8;
     font-style: italic;
     transition: transform 0.5s, translate 0.5s;
+
+    opacity: 0;
+    animation: animatenav 2s forwards;
+}
+
+
+@keyframes animatenav {
+    to {
+        opacity: 1;
+    }
 }
 
 nav a:hover {
