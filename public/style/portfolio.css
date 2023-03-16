@@ -151,6 +151,19 @@ iframe {
     animation: project 1s 0.3s forwards;
 
 }
+
+.project-el-1 div:nth-child(4){
+    position: relative;
+    left: 0%;
+    top: 2rem;
+    rotate: 0turn;
+    opacity: 0;
+}
+.show .project-el-1 div:nth-child(4){
+    animation: project 1s 0.6s forwards;
+
+}
+
 .project-el-4 { 
     grid-area: 1 / 2 / 4 / 3; 
     position: relative;
@@ -174,3 +187,48 @@ iframe {
         scale: 1;
     }
    }
+
+
+
+.github-btn {
+    position: relative;
+    font-size: 25px;
+}
+
+.github-btn svg {
+    height: 4em;
+    width: 4em;
+    position: absolute;
+    right: -2rem;
+    top: -3rem;
+    color: white;
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.github-btn p {
+    margin: 0px;
+    position: absolute;
+    text-align: center;
+    width: 1em;
+    padding-left: 0.5em;
+    right: 0.15em;
+    top: -3.6em;
+    height: 7.5em;
+    font-size: 0.8em;
+    font-style: normal;
+    font-weight: normal;
+}
+
+.round p {
+    transform: rotate(0deg);
+    animation: rotatee linear 15s infinite;
+}
+
+@keyframes rotatee {
+    0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(-360deg);
+}

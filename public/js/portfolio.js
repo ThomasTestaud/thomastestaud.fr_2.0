@@ -45,7 +45,36 @@ window.addEventListener('DOMContentLoaded', (event) => {
     setTimeout(() => {
         document.querySelector('#project-0').scrollIntoView();
     }, 100);
-    /*window.addEventListener('click', function () {
-        animateProject[1].classList.toggle('show');
-    })*/
+
+    /*let round = document.querySelector('.round');
+    let roundContent = round.textContent;
+    let deg = 360 / roundContent.length;
+    let roundContentArray = roundContent.split("");
+
+    let newRoundContent = "";
+    let rotate = 0;
+    for (let i = 0; i < roundContentArray.length; i++) {
+        newRoundContent += "<p style='rotate: " + rotate.toFixed(1) + "deg;'>" + roundContentArray[i] + "</p>";
+        rotate += deg;
+    }
+    round.innerHTML = newRoundContent;*/
+
+
+    let round = document.querySelectorAll('.round');
+
+    for (let i = 0; i < round.length; i++) {
+
+        let roundContent = round[i].textContent;
+        let deg = 360 / roundContent.length;
+        let roundContentArray = roundContent.split("");
+
+        let newRoundContent = "";
+        let rotate = 0;
+        for (let i = 0; i < roundContentArray.length; i++) {
+            newRoundContent += "<p style='rotate: " + rotate.toFixed(1) + "deg;'>" + roundContentArray[i] + "</p>";
+            rotate += deg;
+        }
+        round[i].innerHTML = newRoundContent;
+    }
+
 });
