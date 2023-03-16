@@ -5,16 +5,31 @@
 	{{ parent() }}
 {% endblock %}
 
+{% block stylesheets %}
+	{{ parent() }}
+	<link rel="stylesheet" href="{{ asset('style/home.css') }}">
+{% endblock %}
+
+{% block script %}
+	{{ parent() }}
+	<script src="{{ asset('js/home.js') }}"></script>
+{% endblock %}
+
 {% block nav %}
 	<a href="/CV">
-		Consulter le CV
+		<p>Consulter le CV</p>
 	</a>
 	<a href="Portfolio">
-		Consulter le PortFolio
+		<p>Consulter le PortFolio</p>
 	</a>
 {% endblock %}
 
 {% block body %}
-	<h1>Thomas Testaud</h1>
-	<p>Développeur PHP Junior</p>
+	<div class="main">
+		<div>
+			<h1>{{profile.name}}</h1>
+			<p>{{profile.title}}</p>
+		</div>
+		<img src="images/{{profile.photo}}" alt="Photo de {{profile.name}}">
+	</div>
 {% endblock %}
