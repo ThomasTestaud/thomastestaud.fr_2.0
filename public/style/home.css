@@ -1,14 +1,23 @@
 body {
     font-size: 20px;
+    height: 100vh;
 }
-
-
+/*
+* {
+    border: 1px solid red;
+}
+*/
+main {
+    height: 100%;
+}
 .main {
     display: flex;
     align-items: top;
     justify-content: space-around;
-    margin-top: 7em;
+    align-items: center;
+    /*margin-top: 7em;*/
     text-align: right;
+    height: 80%;
 }
 
 h1 {
@@ -16,7 +25,7 @@ h1 {
     font-size: 4rem;
     opacity: .7;
     margin: 0;
-    margin-top: 1em;
+    /*margin-top: 1em;*/
 
     position: relative;
     left: -10%;
@@ -58,7 +67,7 @@ p {
     opacity: 0;
     rotate: -0.01turn;
     scale: 0.8;
-    animation: animatep 2s forwards;
+    animation: animatep 1.8s forwards;
 }
 
 @keyframes animatep {
@@ -71,7 +80,7 @@ p {
     }
    }
 
-img {
+.main img {
     height: 20em;
     border-radius: 50%;
 
@@ -81,14 +90,14 @@ img {
     opacity: 0;
     rotate: -0.2turn;
     scale: 0.8;
-    animation: animateim 1.5s forwards;
+    animation: animateim 1s forwards;
 }
 
 @keyframes animateim {
     to {
         left: 0%;
         bottom: 0em;
-        opacity: 1;
+        opacity: 0.85;
         rotate: 0turn;
         scale: 1;
     }
@@ -165,7 +174,7 @@ nav a:nth-child(1){
     opacity: 0;
     rotate: 0.1turn;
     scale: 0.8;
-    animation: animatea1 1.5s forwards;
+    animation: animatea1 1s forwards;
 }
 
 @keyframes animatea1 {
@@ -182,11 +191,11 @@ nav a:nth-child(1){
 nav a:nth-child(2){
     position: relative;
     left: 20%;
-    bottom: -15em;
+    bottom: -11em;
     opacity: 0;
     rotate: -0.05turn;
     scale: 0.7;
-    animation: animatea2 1.5s 0.2s forwards;
+    animation: animatea2 1s 0.1s forwards;
 }
 
 @keyframes animatea2 {
@@ -197,4 +206,9 @@ nav a:nth-child(2){
         rotate: 0turn;
         scale: 1;
     }
-   }
+}
+
+.ball {
+    z-index: 0;
+    color: red;
+}

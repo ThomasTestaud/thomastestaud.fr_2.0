@@ -1,17 +1,27 @@
 
 window.addEventListener('DOMContentLoaded', (event) => {
+
+    let height = window.innerHeight;
+    let width = window.innerWidth;
+
     class Ball {
-        constructor(id) {
+        constructor(id, maxSpeed) {
             this.id = id;
 
             this.opacity = Math.random();
-            this.size = Math.random() * 50;
-            this.coefX = Math.random() * 10 - Math.random() * 10;
-            this.coefY = Math.random() * 10 - Math.random() * 10;
-            this.positionX = Math.random() * 400;
-            this.positionY = Math.random() * 600;
+            this.size = Math.random() * 150 + 30;
+            this.coefX = Math.random() * maxSpeed - Math.random() * maxSpeed;
+            this.coefY = Math.random() * maxSpeed - Math.random() * maxSpeed;
+            this.positionX = Math.random() * (width - this.size);
+            this.positionY = Math.random() * (height - this.size);
+            this.shape = Math.round(Math.random() * 7) + 1;
+            this.angle = Math.random();
+            this.angleCoef = (Math.random() - 0.5) / 500;
 
-            ballsContainer.innerHTML += `<div id='${this.id}'></div>`;
+            //ballsContainer.innerHTML += `<div class='ball' id='${this.id}'></div>`;
+
+            ballsContainer.innerHTML += `<img class='ball' id='${this.id}' src="images/svg/shape${this.shape}.svg" style="opacity: 0;"></img>`;
+
             this.ball = document.querySelector("#" + this.id);
 
         }
@@ -19,47 +29,49 @@ window.addEventListener('DOMContentLoaded', (event) => {
         refresh(height, width) {
             this.positionY += this.coefY;
             this.positionX += this.coefX;
+            this.angle += this.angleCoef;
 
-            if (this.positionY > height || this.positionY < 0) {
+            if (this.positionY > (height - this.size) || this.positionY < 0) {
                 this.coefY *= -1;
+                this.angleCoef = (Math.random() - 0.5) / 500;
             }
-            if (this.positionX > width || this.positionX < 0) {
+            if (this.positionX > (width - this.size) || this.positionX < 0) {
                 this.coefX *= -1;
+                this.angleCoef = (Math.random() - 0.5) / 500;
             }
             this.ball.style = `height:${this.size}px;width:${this.size}px;border-radius:50%;background-color:black;opacity:${this.opacity};position:fixed;top:${this.positionY}px;left:${this.positionX}px;`;
 
-            return `height:${this.size}px;width:${this.size}px;border-radius:50%;background-color:black;opacity:${this.opacity};position:fixed;top:${this.positionY}px;left:${this.positionX}px;`;
+            return `height:${this.size}px;width:${this.size}px;opacity:${this.opacity};position:fixed;top:${this.positionY}px;left:${this.positionX}px;rotate:${this.angle}turn;`;
         }
     }
 
 
 
     let ballsContainer = document.querySelector('#balls');
-    let height = window.innerHeight;
-    let width = window.innerWidth;
 
 
 
     let ballname = 'a';
     let instances = [];
-    for (let i = 0; i < 5; i++) {
-        instances.push(new Ball(ballname));
+    for (let i = 0; i < 25; i++) {
+        instances.push(new Ball(ballname, 1));
         ballname += 'a';
 
     }
 
-
-    document.querySelector('#' + instances[0].id).style = instances[0].refresh(height, width);
 
 
     setInterval(() => {
         height = window.innerHeight;
         width = window.innerWidth;
 
-
-        instances.forEach(function (instance) {
-            instance.refresh(height, width);
-        });
+        for (let i = 0; i < instances.length; i++) {
+            document.querySelector('#' + instances[i].id).style = instances[i].refresh(height, width);
+        }
+        /*
+                instances.forEach(function (instance) {
+                    instance.refresh(height, width);
+                });*/
     }, 10)
 
 });
