@@ -22,6 +22,14 @@ class PortfolioController extends AbstractController
                 'github' => 'https://github.com/ThomasTestaud/Pioupiou/blob/main/Pioupiou/index.php',
             ],
             [
+                'title' => 'thomas testaud.fr',
+                'description' => "Oui oui, c'est le site sur lequel vous êtes actuellement. Un site vitrine plus ou moins basique, réalisé avec le framework symfony.",
+                'link' => 'https://thomastestaud.fr',
+                'techs' => ['Symfony', 'PHP', 'JavaScript', 'HTML', 'CSS'],
+                'shape' => 'phone',
+                'github' => 'https://github.com/ThomasTestaud/thomastestaud.fr_2.0',
+            ],
+            [
                 'title' => 'CarCity',
                 'description' => "CarCity est un mini GTA-like en JavaScript. On y incarne un petit bonhomme bleu que peut se promener à sa guise, enter et conduire des petites voitures HTML/CSS.",
                 'link' => 'https://thomastestaud.sites.3wa.io/CarCity_PIOU.1/car.phtml',

@@ -2,11 +2,7 @@ body {
     font-size: 20px;
     height: 100vh;
 }
-/*
-* {
-    border: 1px solid red;
-}
-*/
+
 main {
     height: 100%;
 }
@@ -210,5 +206,66 @@ nav a:nth-child(2){
 
 .ball {
     z-index: 0;
-    color: red;
 }
+
+
+
+@media (max-width: 800px) {
+/*
+    *{
+        border: 1px solid red;
+    }
+*/
+    body {
+        height: 100vh;
+    }
+    
+    .main {
+        display: flex;
+        flex-direction: column;
+        height: 55%;
+        padding: 2em 1em;
+    }
+
+    h1 {
+        font-family: 'Climate Crisis', cursive;
+        font-size: 2rem;
+        text-align: center;
+        margin: 0;
+    }
+
+    .main p {
+        font-size: 1.5rem;
+        text-align: center;
+        margin: 0; 
+    }
+
+    .main img {
+        height: 10em;
+    }
+
+    nav {
+        position: fixed;
+        left: 0%;
+        width: 100vw;
+        margin: 0rem;
+        top: 60%;
+        flex-direction: row;
+        justify-content: space-between;
+        scale: 0.8;
+    }
+
+    nav a +a {
+        margin-left: 0em;
+        margin-right: 1em;
+        margin-top: 7em;
+    }
+
+    #balls{
+        opacity: 0.4;
+    }
+    .ball {
+        scale: 0.8;
+    }
+   
+   }

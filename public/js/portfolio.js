@@ -44,7 +44,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
     setTimeout(() => {
         document.querySelector('#project-0').scrollIntoView();
-    }, 100);
+    }, 300);
 
 
 

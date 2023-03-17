@@ -121,6 +121,7 @@ iframe::-webkit-scrollbar {
     grid-area: 1 / 1 / 4 / 2;
     top: -2rem;
     position: relative;
+    width: 25em;
 }
 
 .project-el-1 div:nth-child(1){

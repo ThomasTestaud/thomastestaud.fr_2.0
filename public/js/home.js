@@ -5,11 +5,11 @@ window.addEventListener('DOMContentLoaded', (event) => {
     let width = window.innerWidth;
 
     class Ball {
-        constructor(id, maxSpeed) {
+        constructor(id, maxSpeed, outScreen = 0, sizeCoef = 1) {
             this.id = id;
 
             this.opacity = Math.random();
-            this.size = Math.random() * 150 + 30;
+            this.size = Math.random() * (150 + 30) * sizeCoef;
             this.coefX = Math.random() * maxSpeed - Math.random() * maxSpeed;
             this.coefY = Math.random() * maxSpeed - Math.random() * maxSpeed;
             this.positionX = Math.random() * (width - this.size);
@@ -17,6 +17,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
             this.shape = Math.round(Math.random() * 7) + 1;
             this.angle = Math.random();
             this.angleCoef = (Math.random() - 0.5) / 500;
+            this.outScreen = outScreen;
 
             //ballsContainer.innerHTML += `<div class='ball' id='${this.id}'></div>`;
 
@@ -31,11 +32,11 @@ window.addEventListener('DOMContentLoaded', (event) => {
             this.positionX += this.coefX;
             this.angle += this.angleCoef;
 
-            if (this.positionY > (height - this.size) || this.positionY < 0) {
+            if (this.positionY > (height - this.size + this.outScreen) || this.positionY < (0 - this.outScreen)) {
                 this.coefY *= -1;
                 this.angleCoef = (Math.random() - 0.5) / 500;
             }
-            if (this.positionX > (width - this.size) || this.positionX < 0) {
+            if (this.positionX > (width - this.size + this.outScreen) || this.positionX < (0 - this.outScreen)) {
                 this.coefX *= -1;
                 this.angleCoef = (Math.random() - 0.5) / 500;
             }
@@ -54,7 +55,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     let ballname = 'a';
     let instances = [];
     for (let i = 0; i < 25; i++) {
-        instances.push(new Ball(ballname, 1));
+        instances.push(new Ball(ballname, 1, 100, 0.8));
         ballname += 'a';
 
     }
