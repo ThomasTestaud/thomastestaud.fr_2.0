@@ -74,7 +74,7 @@ p {
         rotate: 0turn;
         scale: 1;
     }
-   }
+}
 
 .main img {
     height: 20em;
@@ -97,7 +97,7 @@ p {
         rotate: 0turn;
         scale: 1;
     }
-   }
+}
 
 
 
@@ -181,7 +181,7 @@ nav a:nth-child(1){
         rotate: 0turn;
         scale: 1;
     }
-   }
+}
 
 
 nav a:nth-child(2){
@@ -211,11 +211,7 @@ nav a:nth-child(2){
 
 
 @media (max-width: 800px) {
-/*
-    *{
-        border: 1px solid red;
-    }
-*/
+
     body {
         height: 100vh;
     }
@@ -268,4 +264,4 @@ nav a:nth-child(2){
         scale: 0.8;
     }
    
-   }
+}
