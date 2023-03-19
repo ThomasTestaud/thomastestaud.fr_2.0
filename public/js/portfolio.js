@@ -42,9 +42,9 @@ window.addEventListener('DOMContentLoaded', (event) => {
     }
 
 
-    setTimeout(() => {
-        document.querySelector('#project-0').scrollIntoView();
-    }, 300);
+    //setTimeout(() => {
+    document.querySelector('#project-0').scrollIntoView();
+    //}, 300);
 
 
 

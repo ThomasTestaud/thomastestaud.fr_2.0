@@ -241,3 +241,7 @@ iframe::-webkit-scrollbar {
       100% {
         transform: rotate(-360deg);
 }
+
+* {
+    border: 1px solid red;
+}
