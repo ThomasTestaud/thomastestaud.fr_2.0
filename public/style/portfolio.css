@@ -243,7 +243,7 @@ iframe::-webkit-scrollbar {
       }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1200px) {
   
    
     h2 {
@@ -274,13 +274,14 @@ iframe::-webkit-scrollbar {
     .article-project {
         height: auto;
         width: 100%;
+        margin-bottom: 7rem;
     }
 
     iframe {
         margin-left: 0%;
         width: 100%;
         min-width: 100vw;
-        border-radius: 5rem;
+        border-radius: 3rem;
     }
     .square {
         height: 500px;
@@ -291,6 +292,7 @@ iframe::-webkit-scrollbar {
         display: flex;
         align-items: center;
         justify-content: center;
+        margin: 2rem 0rem;
     }
     .github-btn svg {
         position: relative;
@@ -329,5 +331,15 @@ iframe::-webkit-scrollbar {
     .scroll-down,
     .scroll-up {
         display: none;
+    }
+}
+
+
+@media (max-width: 500px) {
+    iframe {
+        margin-left: 0%;
+        width: 100%;
+        min-width: 100vw;
+        border-radius: 1rem;
     }
 }

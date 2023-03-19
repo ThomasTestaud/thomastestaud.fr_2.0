@@ -17,8 +17,10 @@ main {
 }
 
 img {
-    margin: 5rem 0rem;;
-    max-width: 900px;
+    margin: 5rem 0rem;
+    width: 900px;
+    max-width: 100%;
+    
     animation: animatecv 2s forwards;
     
     position: relative;
@@ -31,5 +33,15 @@ img {
     to {
         top: 0em;
         opacity: 0.9;
+    }
+    
+}
+
+
+@media (max-width: 1000px) {
+    nav {
+        top: 0rem;
+        display: flex;
+        flex-direction: row;
     }
 }

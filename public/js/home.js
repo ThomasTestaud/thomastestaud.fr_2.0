@@ -51,28 +51,38 @@ window.addEventListener('DOMContentLoaded', (event) => {
     let ballsContainer = document.querySelector('#balls');
 
 
+    let body = document.querySelector('body');
 
     let ballname = 'a';
     let instances = [];
     for (let i = 0; i < 25; i++) {
         instances.push(new Ball(ballname, 1, 100, 0.8));
         ballname += 'a';
-
     }
 
+    rdmColor = ["blue", "cyan", "purple", "green", "pink", "yellow", "beige"];
+    function chooseColor() {
+        return rdmColor[Math.floor(Math.random() * rdmColor.length)];
+    }
 
+    for (let i = 0; i < 25; i++) {
+        document.querySelector('#' + instances[i].id).addEventListener('click', () => {
+            for (let a = 0; a < rdmColor.length; a++) {
+                body.classList.remove(rdmColor[a]);
+            }
+            body.classList.add(chooseColor());
+            console.log(chooseColor());
+        });
+    }
 
     setInterval(() => {
         height = window.innerHeight;
         width = window.innerWidth;
 
         for (let i = 0; i < instances.length; i++) {
+
             document.querySelector('#' + instances[i].id).style = instances[i].refresh(height, width);
         }
-        /*
-                instances.forEach(function (instance) {
-                    instance.refresh(height, width);
-                });*/
     }, 10)
 
 });
