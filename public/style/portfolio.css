@@ -342,8 +342,22 @@ iframe::-webkit-scrollbar {
         min-width: 100vw;
         border-radius: 1rem;
     }
+    .project-el-1 {
+        max-width: 90%;
+    }
 
     h2 {
         overflow: hidden;
+        font-size: 2.5rem;
+        text-align: center;
     }
+    p {
+        font-size: 1.5rem;
+    }
+
+    ul {
+        font-size: 1.5rem;
+    }
+
+    
 }
