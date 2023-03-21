@@ -258,6 +258,7 @@ nav a:nth-child(2){
 
     .main p {
         font-size: 2.5rem;
+        
         text-align: center;
         margin: 0; 
     }
@@ -295,6 +296,7 @@ nav a:nth-child(2){
         align-items: center;
         justify-content: center;
         transform: rotate(0turn) scale(1);
+        
     
         box-shadow: rgba(51, 172, 231, 1) 4px 20px 0px;
     }

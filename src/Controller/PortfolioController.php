@@ -22,9 +22,9 @@ class PortfolioController extends AbstractController
                 'github' => 'https://github.com/ThomasTestaud/Pioupiou/blob/main/Pioupiou/index.php',
             ],
             [
-                'title' => 'thomas testaud.fr',
+                'title' => 'thomas testaud .com',
                 'description' => "Oui oui, c'est le site sur lequel vous êtes actuellement. Un site vitrine plus ou moins basique, réalisé avec le framework symfony.",
-                'link' => 'https://thomastestaud.fr',
+                'link' => 'https://thomastestaud.com',
                 'techs' => ['Symfony', 'PHP', 'JavaScript', 'HTML', 'CSS'],
                 'shape' => 'phone',
                 'github' => 'https://github.com/ThomasTestaud/thomastestaud.fr_2.0',

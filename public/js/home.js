@@ -70,8 +70,11 @@ window.addEventListener('DOMContentLoaded', (event) => {
             for (let a = 0; a < rdmColor.length; a++) {
                 body.classList.remove(rdmColor[a]);
             }
-            body.classList.add(chooseColor());
-            console.log(chooseColor());
+            let color = chooseColor();
+            body.classList.add(color);
+            setTimeout(() => {
+                body.classList.remove(color);
+            }, 3000);
         });
     }
 
