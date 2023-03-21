@@ -11,12 +11,12 @@ class PortfolioController extends AbstractController
     #[Route('/Portfolio', name: 'app_portfolio')]
     public function index(): Response
     {
-
+        session_start();
         $articles = [
             [
                 'title' => 'Pioupiou',
                 'description' => "Pioupiou est un Tweeter-like en PHP. C'est un réseau social simple où l'on peut créer un compte, publier et commenter des posts (contenant des médias), personnaliser son profil (ajouter une description, changer sa photo de profil, sa photo de bannière). Ce projet est encore en cours de développement.",
-                'link' => 'https://thomastestaud.sites.3wa.io/PROJET%20FINAL/2.1/index.php?route=welcome&action=login',
+                'link' => 'https://thomastestaud.sites.3wa.io/PROJET%20FINAL/2.1/index.php?route=dashboard&invite="dd"',
                 'techs' => ['PHP', 'MySQL', 'JavaScript', 'HTML', 'CSS', 'Modèle MVC', 'Ajax'],
                 'shape' => 'phone',
                 'github' => 'https://github.com/ThomasTestaud/Pioupiou/blob/main/Pioupiou/index.php',
