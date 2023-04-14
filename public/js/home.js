@@ -55,8 +55,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
     let ballname = 'a';
     let instances = [];
-    for (let i = 0; i < 25; i++) {
-        instances.push(new Ball(ballname, 1, 100, 0.8));
+    for (let i = 0; i < 15; i++) {
+        instances.push(new Ball(ballname, 1, 100, 3));
         ballname += 'a';
     }
 
@@ -65,7 +65,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
         return rdmColor[Math.floor(Math.random() * rdmColor.length)];
     }
 
-    for (let i = 0; i < 25; i++) {
+    for (let i = 0; i < 15; i++) {
         document.querySelector('#' + instances[i].id).addEventListener('click', () => {
             for (let a = 0; a < rdmColor.length; a++) {
                 body.classList.remove(rdmColor[a]);

@@ -318,10 +318,26 @@ nav a:nth-child(2){
 
 
     #balls{
-        opacity: 0.6;
+        opacity: 1;
     }
     .ball {
-        scale: 1.5;
+        scale: 0.5;
     }
    
+}
+
+
+@media (max-width: 450px) {
+    
+
+    h1 {
+        font-family: 'Climate Crisis', cursive;
+        font-size: 3rem;
+        text-align: center;
+        margin: 0;
+    }
+
+    .ball {
+        scale: 0.5;
+    }
 }

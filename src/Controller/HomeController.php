@@ -13,7 +13,7 @@ class HomeController extends AbstractController
     {
         $profile = [
             'name' => 'Thomas Testaud',
-            'title' => 'Développeur PHP Junior',
+            'title' => 'Développeur Web FullStack Junior',
             'photo' => 'photoCV.jpg',
         ];
 

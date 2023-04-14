@@ -15,8 +15,8 @@ class PortfolioController extends AbstractController
         $articles = [
             [
                 'title' => 'Pioupiou',
-                'description' => "Pioupiou est un Tweeter-like en PHP. C'est un réseau social simple où l'on peut créer un compte, publier et commenter des posts (contenant des médias), personnaliser son profil (ajouter une description, changer sa photo de profil, sa photo de bannière). Ce projet est encore en cours de développement.",
-                'link' => 'https://thomastestaud.sites.3wa.io/PROJET%20FINAL/2.1/index.php?route=dashboard&invite="dd"',
+                'description' => "Pioupiou est un Tweeter-like en PHP. C'est un réseau social simple où l'on peut créer un compte, publier et commenter des posts (contenant des médias), personnaliser son profil (ajouter une description, changer sa photo de profil, sa photo de bannière). Ce projet est encore en cours de développement. /!\Noter que le rendu sur ce site empêche l'aplication de fonctionner correctement./!\ ",
+                'link' => 'https://thomastestaud.sites.3wa.io/PROJET%20FINAL/2.5/index.php?route=dashboard&invite="dd"',
                 'techs' => ['PHP', 'MySQL', 'JavaScript', 'HTML', 'CSS', 'Modèle MVC', 'Ajax'],
                 'shape' => 'phone',
                 'github' => 'https://github.com/ThomasTestaud/Pioupiou/blob/main/Pioupiou/index.php',
@@ -39,7 +39,7 @@ class PortfolioController extends AbstractController
             ],
             [
                 'title' => 'DNT V.C.',
-                'description' => "Créé pour équipe de rédacteur.e.s, DNT VisualChecker est mon premier projet en cours de développement pour une entreprise. C'est une app de traitement de texte qui sert à éditer les balises dnt (do not translate), utiles dans les logiciels de TAO (Traduction Assistée par Ordinateur).",
+                'description' => "Créé pour équipe de rédacteur.e.s, DNT VisualChecker est mon premier projet en cours de développement pour une entreprise. C'est une app de traitement de texte qui sert à éditer les balises dnt (do not translate), utiles dans les logiciels de TAO (Traduction Assistée par Ordinateur). /!\Noter que le rendu sur ce site empêche l'aplication de fonctionner correctement./!\ ",
                 'link' => 'https://www.thomastestaud.fr/-/DntVisualChecker/index.php',
                 'techs' => ['PHP', 'JavaScript', 'HTML', 'CSS'],
                 'shape' => 'square',
@@ -47,7 +47,7 @@ class PortfolioController extends AbstractController
             ],
             [
                 'title' => 'MemoList',
-                'description' => "MemoList est une application en PHP qui favorise l'apprentissage des langues étrangères. L'app affiche un mot aléatoirement pour lequel il faut trouver son équivalent. L'utilisateur peut librement ajouter ou supprimer des termes dans la base de données, au fur et à mesure de sa progression.",
+                'description' => "MemoList est une application en PHP qui favorise l'apprentissage des langues étrangères. L'app affiche un mot aléatoirement pour lequel il faut trouver son équivalent. L'utilisateur peut librement ajouter ou supprimer des termes dans la base de données, au fur et à mesure de sa progression. /!\Noter que le rendu sur ce site empêche l'aplication de fonctionner correctement./!\ ",
                 'link' => 'https://www.thomastestaud.fr/-/MemoList/index.php',
                 'techs' => ['PHP', 'MySQL', 'HTML', 'CSS'],
                 'shape' => 'phone',
