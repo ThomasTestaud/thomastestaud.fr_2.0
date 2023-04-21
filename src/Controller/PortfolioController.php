@@ -21,14 +21,14 @@ class PortfolioController extends AbstractController
                 'shape' => 'phone',
                 'github' => 'https://github.com/ThomasTestaud/Pioupiou/blob/main/Pioupiou/index.php',
             ],
-            [
-                'title' => 'thomas testaud .com',
-                'description' => "Oui oui, c'est le site sur lequel vous êtes actuellement. Un site vitrine plus ou moins basique, réalisé avec le framework symfony.",
-                'link' => 'https://thomastestaud.com',
-                'techs' => ['Symfony', 'PHP', 'JavaScript', 'HTML', 'CSS'],
+            /*[
+                'title' => 'client println("") API',
+                'description' => "client.println(\"\") API est une api et son interface qui sert à envelopper le code d'une page web à l'intérieur de la fonction C++ client.println(\"\"). Je l'ai développé, car j'en avais besoin pour héberger des petites application web monolithique sur le WebServer de mon ESP32 en C++.",
+                'link' => 'http://wwcp.thomastestaud.com/index.php',
+                'techs' => ['PHP', 'AJAX', 'JavaScript', 'HTML', 'CSS', 'API'],
                 'shape' => 'phone',
-                'github' => 'https://github.com/ThomasTestaud/thomastestaud.fr_2.0',
-            ],
+                'github' => 'https://github.com/ThomasTestaud/API_webapp_to_esp32_server/blob/main/index.php',
+            ],*/
             [
                 'title' => 'CarCity',
                 'description' => "CarCity est un mini GTA-like en JavaScript. On y incarne un petit bonhomme bleu que peut se promener à sa guise, enter et conduire des petites voitures HTML/CSS.",
@@ -36,6 +36,14 @@ class PortfolioController extends AbstractController
                 'techs' => ['JavaScript', 'HTML', 'CSS'],
                 'shape' => 'square',
                 'github' => 'https://github.com/ThomasTestaud/CarCity/blob/main/CarCity/Car.js',
+            ],
+            [
+                'title' => 'thomas testaud .com',
+                'description' => "Oui oui, c'est le site sur lequel vous êtes actuellement. Un site vitrine plus ou moins basique, réalisé avec le framework symfony.",
+                'link' => 'https://thomastestaud.com',
+                'techs' => ['Symfony', 'PHP', 'JavaScript', 'HTML', 'CSS'],
+                'shape' => 'phone',
+                'github' => 'https://github.com/ThomasTestaud/thomastestaud.fr_2.0',
             ],
             [
                 'title' => 'DNT V.C.',
