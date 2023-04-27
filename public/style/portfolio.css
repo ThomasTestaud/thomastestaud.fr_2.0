@@ -168,6 +168,7 @@ iframe::-webkit-scrollbar {
     rotate: 0turn;
     opacity: 0;
 }
+
 .show .project-el-1 div:nth-child(4){
     animation: project 1s 0.6s forwards;
 
@@ -182,10 +183,14 @@ iframe::-webkit-scrollbar {
     rotate: 0.1turn;
     scale: 0.6;
 }
+
+
 .show .project-el-4{
     
     animation: project 1s 0.2s forwards;
 }
+
+
 
 @keyframes project {
     to {

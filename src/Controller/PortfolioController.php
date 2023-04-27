@@ -21,21 +21,29 @@ class PortfolioController extends AbstractController
                 'shape' => 'phone',
                 'github' => 'https://github.com/ThomasTestaud/Pioupiou/blob/main/Pioupiou/index.php',
             ],
-            /*[
-                'title' => 'client println("") API',
-                'description' => "client.println(\"\") API est une api et son interface qui sert à envelopper le code d'une page web à l'intérieur de la fonction C++ client.println(\"\"). Je l'ai développé, car j'en avais besoin pour héberger des petites application web monolithique sur le WebServer de mon ESP32 en C++.",
-                'link' => 'http://wwcp.thomastestaud.com/index.php',
-                'techs' => ['PHP', 'AJAX', 'JavaScript', 'HTML', 'CSS', 'API'],
-                'shape' => 'phone',
-                'github' => 'https://github.com/ThomasTestaud/API_webapp_to_esp32_server/blob/main/index.php',
-            ],*/
+            [
+                'title' => 'API Talker',
+                'description' => "REST_API_Talker est un application pour communiquer et utiliser de manière simple des API ReST.",
+                'link' => 'https://api-talker.thomastestaud.com/',
+                'techs' => ['PHP', 'AJAX', 'JavaScript', 'HTML', 'CSS'],
+                'shape' => 'square',
+                'github' => 'https://github.com/ThomasTestaud/API_Talker',
+            ],
             [
                 'title' => 'CarCity',
                 'description' => "CarCity est un mini GTA-like en JavaScript. On y incarne un petit bonhomme bleu que peut se promener à sa guise, enter et conduire des petites voitures HTML/CSS.",
                 'link' => 'https://thomastestaud.sites.3wa.io/CarCity_PIOU.1/car.phtml',
-                'techs' => ['JavaScript', 'HTML', 'CSS'],
+                'techs' => ['JavaScript', 'HTML', 'CSS', 'POO'],
                 'shape' => 'square',
                 'github' => 'https://github.com/ThomasTestaud/CarCity/blob/main/CarCity/Car.js',
+            ],
+            [
+                'title' => 'WWCP',
+                'description' => 'Wrap_WebApp_Into_client.println(""); est une application simple qui sert à covertir le code de web apps pour mon server web en C++ sur mon ESP32.',
+                'link' => 'https://wwcp.thomastestaud.com/index.php?route=home',
+                'techs' => ['PHP', 'AJAX', 'JavaScript', 'HTML', 'CSS'],
+                'shape' => 'square',
+                'github' => 'https://github.com/ThomasTestaud/API_Talker',
             ],
             [
                 'title' => 'thomas testaud .com',
