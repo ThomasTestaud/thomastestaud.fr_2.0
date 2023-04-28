@@ -1,29 +1,27 @@
+* {
+    /*border: 1px solid red;*/
+}
+
 body {
     font-size: 20px;
-    height: 100vh;
     transition: background-color 1s;
 }
 
-
-main {
-    height: 100%;
+nav {
+    scale: 1.2;
+    color: white;
 }
+
 .main {
-    display: flex;
-    align-items: top;
-    justify-content: space-around;
-    align-items: center;
-    /*margin-top: 7em;*/
     text-align: right;
-    height: 80%;
+    padding: 2em;
 }
 
 h1 {
     font-family: 'Climate Crisis', cursive;
     font-size: 4rem;
-    opacity: .7;
+    opacity: 1;
     margin: 0;
-    /*margin-top: 1em;*/
 
     position: relative;
     left: -10%;
@@ -42,9 +40,9 @@ h1 {
         rotate: 0turn;
         scale: 1;
     }
-   }
+}
 
-p {
+.main p {
     font-size: 1.5rem;
     opacity: .5;
     font-weight: normal;
@@ -54,7 +52,7 @@ p {
 .main p {
     font-size: 3rem;
     opacity: .5;
-    font-weight: bold;
+    font-weight: light;
     font-style: italic;
     line-height: 1;
     margin: 0; 
@@ -68,6 +66,20 @@ p {
     animation: animatep 1.8s forwards;
 }
 
+#display {
+    text-align: left;
+    font-style: normal;
+    font-size: 2rem;
+    background: rgb(245,189,39);
+background: linear-gradient(90deg, rgba(245,189,39,1) 0%, rgba(255,255,255,0) 100%);
+position: fixed;
+    opacity: 1;
+    padding: 1rem;
+    max-width: 50%;
+}
+
+
+
 @keyframes animatep {
     to {
         left: 0%;
@@ -78,137 +90,15 @@ p {
     }
 }
 
-.main img {
-    height: 20em;
-    border-radius: 50%;
-
-    position: relative;
-    left: -20%;
-    bottom: -10em;
-    opacity: 0;
-    rotate: -0.2turn;
-    scale: 0.8;
-    animation: animateim 1s forwards;
-}
-
-@keyframes animateim {
-    to {
-        left: 0%;
-        bottom: 0em;
-        opacity: 0.85;
-        rotate: 0turn;
-        scale: 1;
-    }
-}
-
-
-
-
-nav {
-    position: fixed;
-    left: 30%;
-    top: 60%;
-    display: flex;
-    flex-direction: row;
-    scale: 1.2;
-}
-
-nav a {
-    background-color: #EC889A;
-    color: White;
-    height: 5rem;
-    width: 7rem;
-    border-radius: 50%;
-    margin: 0.5rem;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    flex-wrap: nowrap;
-    font-family: font-family: 'Raleway', sans-serif;
-    opacity: .8;
-    font-style: italic;
-    transition: transform 0.5s, translate 0.5s;
-    transform: rotate(-0.01turn) scale(1.1);
-
-    box-shadow: rgba(51, 172, 231, 1) 4px 20px 0px;
-    transition: transform 3s, translate 3s, box-shadow 1s;
-}
-
-nav a:hover {
-    box-shadow: rgba(51, 172, 231, 1) 20px 55px 0px;
-    transform: rotate(-0.2turn) scale(1.1);
-}
-
-nav a +a {
-    margin-left: 10em;
-}
-
-nav a p {
-    height: 5em;
-    display: flex;
-    align-items: center;
-    opacity: 1;
-    font-weight: bold;
-    color: white;
-    min-width: 10em;
-    position: relative;
-    left: 0em;
-    text-shadow: rgba(0, 0, 0, 0.424) 2px 2px 3px;
-    rotate: 0deg;
-    transition: rotate 2s, left 2s;
-    rotate: 0deg;
-}
-
-nav a p:hover {
-    left: -3em;
-    rotate: 70deg;
-
-}
-
-nav a:nth-child(1){
-    position: relative;
-    left: -20%;
-    bottom: -10em;
-    opacity: 0;
-    rotate: 0.1turn;
-    scale: 0.8;
-    animation: animatea1 1s forwards;
-}
-
-@keyframes animatea1 {
-    to {
-        left: 0%;
-        bottom: 0em;
-        opacity: 0.8;
-        rotate: 0turn;
-        scale: 1;
-    }
-}
-
-
-nav a:nth-child(2){
-    position: relative;
-    left: 20%;
-    bottom: -11em;
-    opacity: 0;
-    rotate: -0.05turn;
-    scale: 0.7;
-    animation: animatea2 1s 0.1s forwards;
-}
-
-@keyframes animatea2 {
-    to {
-        left: 0%;
-        bottom: 0em;
-        opacity: 0.8;
-        rotate: 0turn;
-        scale: 1;
-    }
+.div-ball {
+    font-family: 'Climate Crisis', cursive;
+    font-size: 2rem;
 }
 
 .ball {
     z-index: 0;
     cursor: pointer;
+
 }
 
 .blue {
@@ -262,60 +152,6 @@ nav a:nth-child(2){
         text-align: center;
         margin: 0; 
     }
-
-    .main img {
-        display: none;
-    }
-
-    nav {
-        position: fixed;
-        left: 0%;
-        width: 100vw;
-        
-        margin: 0rem;
-        top: 40%;
-        flex-direction: column;
-        justify-content: space-between;
-        scale: 0.8;
-    }
-
-    nav a +a {
-        margin-left: 0em;
-        margin-right: 0em;
-        margin-top: 0em;
-    }
-
-    nav a {
-        background-color: #EC889A;
-        color: White;
-        height: 8rem;
-        width: 100%;
-        border-radius: 2rem;
-        margin: 0rem 0rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transform: rotate(0turn) scale(1);
-        
-    
-        box-shadow: rgba(51, 172, 231, 1) 4px 20px 0px;
-    }
-    nav a+a {
-        margin: 5rem 0rem;
-    }
-    
-    nav a:hover {
-        box-shadow: rgba(51, 172, 231, 1) 20px 55px 0px;
-        transform: rotate(0turn) scale(1);
-    }
-    
-    nav a p:hover {
-        left: 0em;
-        rotate: 0deg;
-    
-    }
-
-
 
     #balls{
         opacity: 1;

@@ -5,11 +5,12 @@ window.addEventListener('DOMContentLoaded', (event) => {
     let width = window.innerWidth;
 
     class Ball {
-        constructor(id, maxSpeed, outScreen = 0, sizeCoef = 1) {
+        constructor(comp, comp_description, id, maxSpeed, outScreen = 0, sizeCoef = 1) {
             this.id = id;
-
-            this.opacity = Math.random();
-            this.size = Math.random() * (150 + 30) * sizeCoef;
+            this.comp = comp;
+            this.comp_description = comp_description;
+            this.opacity = Math.random() + 0.7;
+            this.size = Math.random() * (80 * sizeCoef) + 90;
             this.coefX = Math.random() * maxSpeed - Math.random() * maxSpeed;
             this.coefY = Math.random() * maxSpeed - Math.random() * maxSpeed;
             this.positionX = Math.random() * (width - this.size);
@@ -20,8 +21,11 @@ window.addEventListener('DOMContentLoaded', (event) => {
             this.outScreen = outScreen;
 
             //ballsContainer.innerHTML += `<div class='ball' id='${this.id}'></div>`;
-
-            ballsContainer.innerHTML += `<img class='ball' id='${this.id}' src="images/svg/shape${this.shape}.svg" style="opacity: 0;"></img>`;
+            //ballsContainer.innerHTML += `<img class='ball' id='${this.id}' src="images/svg/shape${this.shape}.svg" style="opacity: 0;"></img>`;
+            ballsContainer.innerHTML += `<div class="div-ball" id='${this.id}' style='position: relative;'>
+            <img style='position: absolute; top:0; left:0; width: ${this.size}px; height: ${this.size}px;' class='ball' src="images/svg/shape${this.shape}.svg" style="opacity: 0;"></img>
+            <p  style='position: absolute; top:${this.size / 2 - 50}px; left:${this.size / 2 - 50}px;'>${comp}</p>
+                                        </div>`;
 
             this.ball = document.querySelector("#" + this.id);
 
@@ -47,45 +51,97 @@ window.addEventListener('DOMContentLoaded', (event) => {
     }
 
 
-
     let ballsContainer = document.querySelector('#balls');
-
-
     let body = document.querySelector('body');
+    let display = document.querySelector('#display');
+    document.addEventListener('click', function () {
+        display.innerHTML = "";
+    })
 
-    let ballname = 'a';
-    let instances = [];
-    for (let i = 0; i < 15; i++) {
-        instances.push(new Ball(ballname, 1, 100, 3));
-        ballname += 'a';
-    }
-
-    rdmColor = ["blue", "cyan", "purple", "green", "pink", "yellow", "beige"];
-    function chooseColor() {
-        return rdmColor[Math.floor(Math.random() * rdmColor.length)];
-    }
-
-    for (let i = 0; i < 15; i++) {
-        document.querySelector('#' + instances[i].id).addEventListener('click', () => {
-            for (let a = 0; a < rdmColor.length; a++) {
-                body.classList.remove(rdmColor[a]);
+    //AJAX///////
+    function getAjax(varLink) {
+        fetch(varLink, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
             }
-            let color = chooseColor();
-            body.classList.add(color);
-            setTimeout(() => {
-                body.classList.remove(color);
-            }, 3000);
-        });
+        })
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    throw new Error('GET request failed.');
+                }
+            })
+            .then(data => {
+                console.log(data);
+                createBalls(data);
+            })
+            .catch(error => {
+                console.error(error);
+            });
     }
 
-    setInterval(() => {
-        height = window.innerHeight;
-        width = window.innerWidth;
+    ///////////////
 
-        for (let i = 0; i < instances.length; i++) {
-
-            document.querySelector('#' + instances[i].id).style = instances[i].refresh(height, width);
+    function createBalls(data) {
+        //Create balls
+        let ballname = 'a';
+        let instances = [];
+        for (let i = 0; i < data.length; i++) {
+            instances.push(new Ball(data[i].comp, data[i].comp_description, ballname, 1, 100, 2));
+            ballname += 'a';
         }
-    }, 10)
+
+        //Pick a ramdom color from the array
+        rdmColor = ["blue", "cyan", "purple", "green", "pink", "yellow", "beige"];
+        function chooseColor() {
+            return rdmColor[Math.floor(Math.random() * rdmColor.length)];
+        }
+        //Adding click events on balls for the background-color swap
+        for (let i = 0; i < data.length; i++) {
+            document.querySelector('#' + instances[i].id).addEventListener('click', () => {
+                //Background-color
+                for (let a = 0; a < rdmColor.length; a++) {
+                    body.classList.remove(rdmColor[a]);
+                }
+                let color = chooseColor();
+                body.classList.add(color);
+
+                //Display skills
+                display.innerHTML = "";
+                let array = instances[i].comp_description.split("");
+
+                let a = 0;
+                let write = setInterval(function () {
+                    display.innerHTML += array[a];
+                    a++;
+                    if (a >= array.length) {
+                        clearInterval(write);
+                    }
+                }, 50);
+
+
+
+                setTimeout(() => {
+                    body.classList.remove(color);
+                }, 3000);
+            });
+        }
+
+        //Move all the balls
+        setInterval(() => {
+            height = window.innerHeight;
+            width = window.innerWidth;
+
+            for (let i = 0; i < instances.length; i++) {
+                document.querySelector('#' + instances[i].id).style = instances[i].refresh(height, width);
+            }
+        }, 10)
+    }
+
+
+    getAjax('https://skillsapi.thomastestaud.com/index.php?route=api&user=0');
+
 
 });
