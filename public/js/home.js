@@ -83,13 +83,14 @@ window.addEventListener('DOMContentLoaded', (event) => {
     }
 
     ///////////////
-
+    let mainInt;
+    let write;
     function createBalls(data) {
         //Create balls
         let ballname = 'a';
         let instances = [];
         for (let i = 0; i < data.length; i++) {
-            instances.push(new Ball(data[i].comp, data[i].comp_description, ballname, 1, 100, 2));
+            instances.push(new Ball(data[i].comp, data[i].comp_description, ballname, 1, 0, 2));
             ballname += 'a';
         }
 
@@ -110,27 +111,28 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
                 //Display skills
                 display.innerHTML = "";
+                console.log(instances[i].comp_description);
                 let array = instances[i].comp_description.split("");
 
                 let a = 0;
-                let write = setInterval(function () {
+                write = setInterval(function () {
                     display.innerHTML += array[a];
                     a++;
                     if (a >= array.length) {
                         clearInterval(write);
                     }
-                }, 50);
+                }, 40);
 
 
 
                 setTimeout(() => {
                     body.classList.remove(color);
-                }, 3000);
+                }, 5000);
             });
         }
 
         //Move all the balls
-        setInterval(() => {
+        mainInt = setInterval(() => {
             height = window.innerHeight;
             width = window.innerWidth;
 
@@ -140,8 +142,21 @@ window.addEventListener('DOMContentLoaded', (event) => {
         }, 10)
     }
 
-
     getAjax('https://skillsapi.thomastestaud.com/index.php?route=api&user=0');
+
+
+    //Reload the balls
+    function deleteBalls() {
+        clearInterval(write);
+        clearInterval(mainInt);
+    }
+
+    let reload = document.querySelector('#reload-balls');
+    reload.addEventListener('click', function () {
+        deleteBalls();
+        ballsContainer.innerHTML = "";
+        getAjax('https://skillsapi.thomastestaud.com/index.php?route=api&user=0');
+    });
 
 
 });
