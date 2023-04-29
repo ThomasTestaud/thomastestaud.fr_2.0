@@ -73,8 +73,9 @@ h1 {
 }
 
 #display {
+    font-family: 'Rubik', sans-serif;
     text-align: left;
-    font-style: normal;
+    font-style: italic;
     font-weight: normal;
     font-size: 2rem;
     background: rgb(255, 255, 255);
@@ -83,7 +84,7 @@ h1 {
     margin: 0;
     top: 0;
     left: 0;
-    opacity: 1;
+    opacity: 0.8;
     padding: 1rem;
     max-width: 50%;
 }
