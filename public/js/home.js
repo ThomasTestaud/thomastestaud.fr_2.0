@@ -48,7 +48,32 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
             return `height:${this.size}px;width:${this.size}px;opacity:${this.opacity};position:fixed;top:${this.positionY}px;left:${this.positionX}px;rotate:${this.angle}turn;`;
         }
+
+        focus() {
+            console.log('focus');
+            let original = this.size;
+            let target = 600;
+            let thisInt = setInterval(function () {
+                //Ball get biger while target is not reached
+                if (this.size >= target) {
+                    clearInterval(thisInt);
+                    let thisInt = setInterval(function () {
+                        if (this.size <= original) {
+                            clearInterval(thisInt);
+                        }
+                        this.size--;
+                        //this.ball.style = `height:${this.size}px;width:${this.size}px;`;
+                        console.log('smaller');
+                    }, 1);
+                }
+                this.size;
+                //this.ball.style = `height:${this.size}px;width:${this.size}px;`;
+                console.log(this.size);
+            }, 1);
+
+        }
     }
+
 
 
     let ballsContainer = document.querySelector('#balls');
@@ -99,6 +124,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
         function chooseColor() {
             return rdmColor[Math.floor(Math.random() * rdmColor.length)];
         }
+
+        ////ADD EVENT LISTENER ON ALL BALLS
         //Adding click events on balls for the background-color swap
         for (let i = 0; i < data.length; i++) {
             document.querySelector('#' + instances[i].id).addEventListener('click', () => {
@@ -108,12 +135,15 @@ window.addEventListener('DOMContentLoaded', (event) => {
                 }
                 let color = chooseColor();
                 body.classList.add(color);
+                //Remove background-color after a delay
+                setTimeout(() => {
+                    body.classList.remove(color);
+                }, 5000);
 
-                //Display skills
+                //Display skills description
                 display.innerHTML = "";
                 console.log(instances[i].comp_description);
                 let array = instances[i].comp_description.split("");
-
                 let a = 0;
                 write = setInterval(function () {
                     display.innerHTML += array[a];
@@ -123,11 +153,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
                     }
                 }, 40);
 
-
-
-                setTimeout(() => {
-                    body.classList.remove(color);
-                }, 5000);
+                //Making the ball go bigger
+                instances[i].focus();
             });
         }
 
