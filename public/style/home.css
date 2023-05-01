@@ -204,4 +204,9 @@ h1 {
     .ball {
         scale: 0.5;
     }
+
+    nav {
+        position: fixed;
+        bottom: 1rem;
+    }
 }
