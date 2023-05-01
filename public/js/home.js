@@ -32,6 +32,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
         }
 
         refresh(height, width) {
+
             this.positionY += this.coefY;
             this.positionX += this.coefX;
             this.angle += this.angleCoef;
@@ -44,37 +45,10 @@ window.addEventListener('DOMContentLoaded', (event) => {
                 this.coefX *= -1;
                 this.angleCoef = (Math.random() - 0.5) / 500;
             }
-            this.ball.style = `height:${this.size}px;width:${this.size}px;border-radius:50%;background-color:black;opacity:${this.opacity};position:fixed;top:${this.positionY}px;left:${this.positionX}px;`;
 
             return `height:${this.size}px;width:${this.size}px;opacity:${this.opacity};position:fixed;top:${this.positionY}px;left:${this.positionX}px;rotate:${this.angle}turn;`;
         }
-
-        focus() {
-            console.log('focus');
-            let original = this.size;
-            let target = 600;
-            let thisInt = setInterval(function () {
-                //Ball get biger while target is not reached
-                if (this.size >= target) {
-                    clearInterval(thisInt);
-                    let thisInt = setInterval(function () {
-                        if (this.size <= original) {
-                            clearInterval(thisInt);
-                        }
-                        this.size--;
-                        //this.ball.style = `height:${this.size}px;width:${this.size}px;`;
-                        console.log('smaller');
-                    }, 1);
-                }
-                this.size;
-                //this.ball.style = `height:${this.size}px;width:${this.size}px;`;
-                console.log(this.size);
-            }, 1);
-
-        }
     }
-
-
 
     let ballsContainer = document.querySelector('#balls');
     let body = document.querySelector('body');
@@ -99,7 +73,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
                 }
             })
             .then(data => {
-                console.log(data);
+                //console.log(data);
                 createBalls(data);
             })
             .catch(error => {
@@ -110,6 +84,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     ///////////////
     let mainInt;
     let write;
+    let array;
     function createBalls(data) {
         //Create balls
         let ballname = 'a';
@@ -141,10 +116,14 @@ window.addEventListener('DOMContentLoaded', (event) => {
                 }, 5000);
 
                 //Display skills description
+                //Clear display and empty variables
+                clearInterval(write);
                 display.innerHTML = "";
-                console.log(instances[i].comp_description);
-                let array = instances[i].comp_description.split("");
+                array = "";
+                //Explode the string of description
+                array = instances[i].comp_description.split("");
                 let a = 0;
+                //Type letters
                 write = setInterval(function () {
                     display.innerHTML += array[a];
                     a++;
@@ -152,9 +131,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
                         clearInterval(write);
                     }
                 }, 40);
-
-                //Making the ball go bigger
-                instances[i].focus();
             });
         }
 
@@ -184,6 +160,5 @@ window.addEventListener('DOMContentLoaded', (event) => {
         ballsContainer.innerHTML = "";
         getAjax('https://skillsapi.thomastestaud.com/index.php?route=api&user=0');
     });
-
 
 });
