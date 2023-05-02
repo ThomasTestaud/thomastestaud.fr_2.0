@@ -13,8 +13,7 @@ class HomeController extends AbstractController
     {
         $profile = [
             'name' => 'Thomas Testaud',
-            'title' => 'Développeur Web FullStack Junior',
-            'photo' => 'photoCV.jpg',
+            'title' => 'Développeur Web FullStack Junior'
         ];
 
         return $this->render('home/index.html.twig', [
