@@ -190,6 +190,27 @@ iframe::-webkit-scrollbar {
     animation: project 1s 0.2s forwards;
 }
 
+.prj-new-tab {
+    position: absolute;
+    padding: 0.6rem;
+    top: -2rem;
+    left: 2rem;
+    background-color: blue;
+    color: white;
+    border: 1px solid blue;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    transition: transform 0.5s;
+    cursor: pointer;
+    
+}
+
+.prj-new-tab:hover {
+    transform: scale(1.2) rotate(360deg);
+}
+
+
 
 
 @keyframes project {
@@ -332,6 +353,9 @@ iframe::-webkit-scrollbar {
         
         animation: project 1s 0.2s forwards;
     }
+
+
+
    
     .scroll-down,
     .scroll-up {
