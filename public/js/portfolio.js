@@ -65,4 +65,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
         round[i].innerHTML = newRoundContent;
     }
 
+
+    // Connect to Events_on_time
+    const token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6Ikludml0XHUwMGU5IiwicGFzc3dvcmQiOiJwYXNzd29yZCIsInVzZXJJZCI6eyJpZCI6Mjl9fQ.avaTRG9PjmLo2Ipj9KXofTJ5X5x_wnWVFdW9lzOPwYY";
+    localStorage.setItem("token", token);
 });
